@@ -9,10 +9,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "tsx scripts/generate-terminal-data.ts && tsx scripts/update-plans-data.ts",
+    "prebuild": "tsx scripts/generate-terminal-data.ts && tsx scripts/update-plans-data.ts && tsx scripts/update-version-cache.ts",
     "build": "astro build",
     "preview": "astro preview",
-    "update:plans": "tsx scripts/update-plans-data.ts"
+    "update:plans": "tsx scripts/update-plans-data.ts",
+    "update:version": "tsx scripts/update-version-cache.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.1",

@@ -1,0 +1,41 @@
+name: Update Version Cache
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update version cache
+        run: npm run update:version
+        env:
+          GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet public/version-cache.json && echo "No changes" && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/version-cache.json
+          git commit -m "chore: update version cache [skip ci]"
+          git push

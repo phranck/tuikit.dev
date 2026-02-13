@@ -31,10 +31,11 @@ jobs:
       - name: Fetch TUIkit version
         id: version
         run: |
+          # Fetch latest TUIkit version tag (fallback: 0.3.0 matches current latest release)
           VERSION=$(curl -s -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/phranck/TUIkit/tags" \
-            | jq -r '.[0].name // "0.1.0"')
+            | jq -r '.[0].name // "0.3.0"')
           VERSION="${VERSION#v}"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "Resolved version: $VERSION"

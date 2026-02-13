@@ -1,12 +1,13 @@
 import { IconBrandSwift, IconCopy, IconCheck } from "@tabler/icons-react";
 import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
-
-const VERSION = import.meta.env.PUBLIC_TUIKIT_VERSION ?? "0.1.0";
-const PACKAGE_LINE = `.package(url: "https://github.com/phranck/TUIkit.git", from: "${VERSION}")`;
+import { useTUIkitVersion } from "../../hooks/useTUIkitVersion";
 
 /** SPM package dependency badge with copy-to-clipboard. */
 export default function PackageBadge() {
   const { copied, copy } = useCopyToClipboard();
+  const { version } = useTUIkitVersion();
+
+  const PACKAGE_LINE = `.package(url: "https://github.com/phranck/TUIkit.git", from: "${version}")`;
 
   return (
     <div className="flex w-full items-center justify-between gap-2 rounded-full border border-border bg-container-body/50 px-4 py-2 text-muted backdrop-blur-sm">
