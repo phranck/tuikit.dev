@@ -24,7 +24,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     define: {
-      'import.meta.env.PUBLIC_TUIKIT_VERSION': JSON.stringify(process.env.TUIKIT_VERSION ?? '0.1.0'),
+      // Fallback version - matches current latest TUIkit release
+      'import.meta.env.PUBLIC_TUIKIT_VERSION': JSON.stringify(process.env.TUIKIT_VERSION ?? '0.3.0'),
       'import.meta.env.PUBLIC_TUIKIT_TEST_COUNT': JSON.stringify(testCount),
       'import.meta.env.PUBLIC_TUIKIT_SUITE_COUNT': JSON.stringify(suiteCount),
     },
