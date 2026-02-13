@@ -4,7 +4,6 @@
 ![React](https://img.shields.io/github/package-json/dependency-version/phranck/tuikit.dev/react?logo=react&logoColor=black&color=61DAFB&label=React)
 ![TypeScript](https://img.shields.io/github/package-json/dependency-version/phranck/tuikit.dev/dev/typescript?logo=typescript&logoColor=white&color=3178C6&label=TypeScript)
 ![Tailwind CSS](https://img.shields.io/github/package-json/dependency-version/phranck/tuikit.dev/dev/tailwindcss?logo=tailwindcss&logoColor=white&color=06B6D4&label=Tailwind%20CSS)
-![GitHub Pages](https://img.shields.io/badge/Deployed_on-GitHub_Pages-222222?logo=github)
 
 ![TUIkit Dashboard](public/images/dashboard-screenshot.png)
 
