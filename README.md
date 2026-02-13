@@ -1,5 +1,5 @@
 ![CI Status](https://github.com/phranck/tuikit.dev/actions/workflows/ci.yml/badge.svg)
-![Node.js Version](https://img.shields.io/node/v/tuikit-landing?logo=node.js&logoColor=white&color=5FA04E&label=Node.js)
+![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-5FA04E?logo=node.js&logoColor=white)
 ![Astro](https://img.shields.io/github/package-json/dependency-version/phranck/tuikit.dev/astro?logo=astro&logoColor=white&color=BC52EE&label=Astro)
 ![React](https://img.shields.io/github/package-json/dependency-version/phranck/tuikit.dev/react?logo=react&logoColor=black&color=61DAFB&label=React)
 ![TypeScript](https://img.shields.io/github/package-json/dependency-version/phranck/tuikit.dev/dev/typescript?logo=typescript&logoColor=white&color=3178C6&label=TypeScript)
