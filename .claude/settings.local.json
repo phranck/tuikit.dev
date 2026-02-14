@@ -22,7 +22,10 @@
       "Bash(npm run preview:*)",
       "Skill(save)",
       "Bash(git checkout:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh run list:*)",
+      "Bash(grep:*)"
     ]
   }
 }

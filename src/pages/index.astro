@@ -12,8 +12,6 @@ import PackageBadge from "../components/react/PackageBadge";
 import TemplateBadge from "../components/react/TemplateBadge";
 import Icon from "../components/react/Icon";
 
-/** Test and suite counts injected at build-time by the prebuild script. */
-const TEST_COUNT = import.meta.env.PUBLIC_TUIKIT_TEST_COUNT ?? "0";
 
 /** Shared button class strings to avoid duplication across Hero and CTA sections. */
 const BTN_PRIMARY =
@@ -196,8 +194,8 @@ const BTN_SECONDARY =
               <div class="flex gap-3">
                 <Icon name="checkmark" size={24} className="text-accent mt-1" />
                 <div>
-                  <h3 class="mb-1 text-xl font-semibold text-foreground">{TEST_COUNT} Tests</h3>
-                  <p class="text-lg leading-relaxed text-muted">Comprehensive test suite covering views, modifiers, rendering, state management, and more.</p>
+                  <h3 class="mb-1 text-xl font-semibold text-foreground">Extensively Tested</h3>
+                  <p class="text-lg leading-relaxed text-muted">Comprehensive test coverage across views, modifiers, rendering, state management, i18n consistency, and localization.</p>
                 </div>
               </div>
               <!-- Arch Highlight: Docs -->
