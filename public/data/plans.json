@@ -1,23 +1,11 @@
 {
-  "generated": "2026-02-14T11:18:12.706Z",
+  "generated": "2026-02-14T12:33:08.375Z",
   "open": [
     {
       "date": "2026-02-14",
       "slug": "project-analysis-improvements",
       "title": "Project Analysis: Improvement Plan",
       "preface": "This plan tracks all recommendations from `papers/project_analysis.md` (2026-02-14).\nThe analysis reviewed 135 Swift source files (28,126 lines) and identified improvements\nacross four priority levels. This checklist serves as the single source of truth for\ntracking progress."
-    },
-    {
-      "date": "2026-02-10",
-      "slug": "bundle-resource-loading",
-      "title": "Bundle Resource Loading Support",
-      "preface": "This plan integrates Foundation.Bundle into TUIkit for resource loading (images, data files, localized strings). Rather than reimplementing Bundle, we leverage SPM's automatic Bundle.module generation for resource management. The implementation adds resource declarations to Package.swift, organizes assets in a Resources directory, and provides type-safe resource accessors. This enables Image(_:bundle:) API and future features like localized strings, custom fonts, and data-driven UI components. The approach is cross-platform (macOS + Linux), requires zero custom Bundle code, and follows Apple's SPM resource conventions."
-    },
-    {
-      "date": "2026-02-10",
-      "slug": "image-view-ascii-art",
-      "title": "Image View with ASCII Art Rendering",
-      "preface": "This plan introduces SwiftUI-conformant Image view support for TUIkit using ASCII art rendering with full 24-bit true color support. The implementation converts raster images (PNG, JPEG) to colored ASCII/Unicode characters, enabling rich visual content in terminal UIs. The system uses platform-specific image decoding (CoreGraphics on macOS, swift-png on Linux) and sophisticated algorithms including brightness mapping, color quantization, Floyd-Steinberg dithering, and aspect ratio correction. The public API mirrors SwiftUI's Image API with terminal-specific modifiers for character set selection and color modes. Performance is optimized through caching, downsampling, and lazy rendering."
     },
     {
       "date": "2026-02-02",
@@ -38,6 +26,18 @@
       "slug": "fix-key-dispatch-architecture",
       "title": "Fix Key Event Dispatch Architecture",
       "preface": "This plan fixes a fundamental design flaw in the key event dispatch system.\nWhen a text-input element (TextField/SecureField) is focused, character keys are\nintercepted by StatusBar shortcuts and default bindings before reaching the\nfocused text field. The fix introduces a \"text-input priority\" check at the top\nof `InputHandler.handle()`, giving the focused text field first access to key\nevents. Only keys the text field does not consume fall through to other layers.\nThe change touches exactly two files with minimal code additions."
+    },
+    {
+      "date": "2026-02-10",
+      "slug": "bundle-resource-loading",
+      "title": "Bundle Resource Loading Support",
+      "preface": "This plan integrates Foundation.Bundle into TUIkit for resource loading (images, data files, localized strings). Rather than reimplementing Bundle, we leverage SPM's automatic Bundle.module generation for resource management. The implementation adds resource declarations to Package.swift, organizes assets in a Resources directory, and provides type-safe resource accessors. This enables Image(_:bundle:) API and future features like localized strings, custom fonts, and data-driven UI components. The approach is cross-platform (macOS + Linux), requires zero custom Bundle code, and follows Apple's SPM resource conventions."
+    },
+    {
+      "date": "2026-02-10",
+      "slug": "image-view-ascii-art",
+      "title": "Image View with ASCII Art Rendering",
+      "preface": "This plan introduces SwiftUI-conformant Image view support for TUIkit using ASCII art rendering with full 24-bit true color support. The implementation converts raster images (PNG, JPEG) to colored ASCII/Unicode characters, enabling rich visual content in terminal UIs. The system uses platform-specific image decoding (CoreGraphics on macOS, swift-png on Linux) and sophisticated algorithms including brightness mapping, color quantization, Floyd-Steinberg dithering, and aspect ratio correction. The public API mirrors SwiftUI's Image API with terminal-specific modifiers for character set selection and color modes. Performance is optimized through caching, downsampling, and lazy rendering."
     },
     {
       "date": "2026-02-10",
