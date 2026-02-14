@@ -1,43 +1,41 @@
 {
   "version": "1.0",
-  "timestamp": "2026-02-14T22:00:00Z",
+  "timestamp": "2026-02-15T00:10:00Z",
   "project_name": "tuikit.dev",
 
   "session": {
     "active_task": null,
-    "task_status": "pending",
+    "task_status": "completed",
     "current_focus": null,
-    "last_checkpoint": "Fixed 'Read the Docs' button link to point to https://docs.tuikit.dev",
+    "last_checkpoint": "tuikit.dev CI/CD refactoring completed - workflows consolidated and test count handling simplified",
     "phase": null
   },
 
   "blockers": [],
 
   "recent_actions": [
-    "Fixed 'Read the Docs' button link from /documentation/tuikit to https://docs.tuikit.dev",
-    "Verified build passes and link is correct in dist/index.html",
-    "Committed fix with detailed commit message",
-    "Fixed documentation buttons to point to docs.tuikit.dev",
-    "Implemented runtime TUIkit version fetching from GitHub releases"
+    "Changed scheduled data refresh to run every 30 minutes instead of hourly",
+    "Consolidated 6 CI/CD workflows into 3 (6 → 3 total)",
+    "Created scheduled-data-refresh.yml consolidating 4 scheduled workflows",
+    "Simplified test count handling - removed fetching, changed to 'Extensively Tested' text",
+    "Removed test-fetching logic from generate-terminal-data.ts",
+    "Simplified astro.config.mjs",
+    "Fixed test count parsing to handle + symbols in regex"
   ],
 
   "git_state": {
     "branch": "main",
-    "commit_hash": "a7be534",
+    "commit_hash": "e2a3289",
     "uncommitted_files": [
-      ".claude/session-state.json",
       "WHATS-NEXT.md",
-      "public/data/plans.json",
-      "public/version-cache.json",
-      ".claude/settings.local.json",
-      ".serena/"
+      ".claude/session-state.json"
     ],
     "staged_changes": []
   },
 
   "next_steps": [
-    "Weitere Landing-Page-Features oder Dashboard-Erweiterungen nach Bedarf",
-    "Terminal-Animation-Sequenzen in terminal-script.md anpassen falls gewünscht",
-    "Optional: Screenshots oder GIFs zur README hinzufügen"
+    "Implement test count automation in TUIkit Repository (update-test-counts.yml)",
+    "Monitor new scheduled-data-refresh.yml workflow for first runs",
+    "Verify all caches update correctly on 30-minute schedule"
   ]
 }
