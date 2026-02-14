@@ -1,0 +1,114 @@
+name: Scheduled Data Refresh
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+    - cron: '0 4 * * 0'  # Weekly full refresh (Sundays 4 AM UTC)
+  workflow_dispatch:
+    inputs:
+      full_refresh:
+        description: 'Run full social cache refresh'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine refresh mode
+        id: mode
+        run: |
+          # Full refresh on Sundays (cron) or if manually triggered with full_refresh=true
+          if [[ "${{ github.event.schedule }}" == "0 4 * * 0" ]] || [[ "${{ inputs.full_refresh }}" == "true" ]]; then
+            echo "is_full_refresh=true" >> "$GITHUB_OUTPUT"
+            echo "Running FULL social cache refresh"
+          else
+            echo "is_full_refresh=false" >> "$GITHUB_OUTPUT"
+            echo "Running incremental update"
+          fi
+
+      - name: Update plans data
+        run: npm run update:plans
+        env:
+          GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
+      - name: Update social cache
+        run: |
+          if [[ "${{ steps.mode.outputs.is_full_refresh }}" == "true" ]]; then
+            npx tsx scripts/update-social-cache.ts --full
+          else
+            npx tsx scripts/update-social-cache.ts
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
+      - name: Update weekly activity cache
+        run: |
+          MAX_RETRIES=5
+          RETRY_DELAY=10
+          OUTPUT_FILE="public/weekly-activity-cache.json"
+
+          for i in $(seq 1 $MAX_RETRIES); do
+            echo "Attempt $i of $MAX_RETRIES..."
+
+            HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/activity.json \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${{ secrets.DASHBOARD_GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/phranck/TUIkit/stats/commit_activity")
+
+            if [ "$HTTP_CODE" = "200" ]; then
+              # Verify it's valid JSON array with data
+              if jq -e 'type == "array" and length > 0' /tmp/activity.json > /dev/null 2>&1; then
+                echo "Success! Got $(jq 'length' /tmp/activity.json) weeks of data."
+                cp /tmp/activity.json "$OUTPUT_FILE"
+                break
+              else
+                echo "Got 200 but empty or invalid data, retrying..."
+              fi
+            else
+              echo "Got HTTP $HTTP_CODE, waiting ${RETRY_DELAY}s before retry..."
+            fi
+
+            sleep $RETRY_DELAY
+          done
+
+          if [ ! -f "$OUTPUT_FILE" ]; then
+            echo "Failed to fetch valid weekly activity data after $MAX_RETRIES attempts"
+            exit 1
+          fi
+
+      - name: Update version cache
+        run: npm run update:version
+        env:
+          GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet public/data/plans.json public/social-cache.json public/weekly-activity-cache.json public/version-cache.json && echo "No changes" && exit 0
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Add files that changed
+          git add -A public/
+
+          git commit -m "chore: refresh cached data (plans, social, activity, version) [skip ci]"
+          git push
