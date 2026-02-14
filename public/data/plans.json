@@ -1,6 +1,12 @@
 {
-  "generated": "2026-02-13T23:24:44.291Z",
+  "generated": "2026-02-14T01:25:02.067Z",
   "open": [
+    {
+      "date": "2026-02-14",
+      "slug": "project-analysis-improvements",
+      "title": "Project Analysis: Improvement Plan",
+      "preface": "This plan tracks all recommendations from `papers/project_analysis.md` (2026-02-14).\nThe analysis reviewed 135 Swift source files (28,126 lines) and identified improvements\nacross four priority levels. This checklist serves as the single source of truth for\ntracking progress."
+    },
     {
       "date": "2026-02-10",
       "slug": "bundle-resource-loading",
@@ -26,6 +32,12 @@
       "slug": "codebase-refactoring",
       "title": "Refactor: Codebase Quality & SwiftUI API Parity",
       "preface": "Konsolidierte Findings aus zwei Audits:\n1. **SwiftUI API Parity** - Vergleich der oeffentlichen APIs mit SwiftUI-Signaturen\n2. **Code Quality** - Duplikate, Inkonsistenzen, grosse Dateien\n\n---"
+    },
+    {
+      "date": "2026-02-13",
+      "slug": "fix-key-dispatch-architecture",
+      "title": "Fix Key Event Dispatch Architecture",
+      "preface": "This plan fixes a fundamental design flaw in the key event dispatch system.\nWhen a text-input element (TextField/SecureField) is focused, character keys are\nintercepted by StatusBar shortcuts and default bindings before reaching the\nfocused text field. The fix introduces a \"text-input priority\" check at the top\nof `InputHandler.handle()`, giving the focused text field first access to key\nevents. Only keys the text field does not consume fall through to other layers.\nThe change touches exactly two files with minimal code additions."
     },
     {
       "date": "2026-02-10",
