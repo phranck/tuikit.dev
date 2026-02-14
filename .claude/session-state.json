@@ -1,32 +1,43 @@
 {
   "version": "1.0",
-  "timestamp": "2026-02-13T12:00:00Z",
+  "timestamp": "2026-02-14T22:00:00Z",
   "project_name": "tuikit.dev",
 
   "session": {
-    "active_task": "None",
+    "active_task": null,
     "task_status": "pending",
     "current_focus": null,
-    "last_checkpoint": "Project-spezifische CLAUDE.md erstellt mit Architektur, Commands und Conventions",
+    "last_checkpoint": "Fixed 'Read the Docs' button link to point to https://docs.tuikit.dev",
     "phase": null
   },
 
   "blockers": [],
 
   "recent_actions": [
-    "Codebase exploriert und Architektur analysiert",
-    ".claude/CLAUDE.md mit projektspezifischer Dokumentation erstellt"
+    "Fixed 'Read the Docs' button link from /documentation/tuikit to https://docs.tuikit.dev",
+    "Verified build passes and link is correct in dist/index.html",
+    "Committed fix with detailed commit message",
+    "Fixed documentation buttons to point to docs.tuikit.dev",
+    "Implemented runtime TUIkit version fetching from GitHub releases"
   ],
 
   "git_state": {
     "branch": "main",
-    "commit_hash": "661fecf",
-    "uncommitted_files": [".claude/"],
+    "commit_hash": "a7be534",
+    "uncommitted_files": [
+      ".claude/session-state.json",
+      "WHATS-NEXT.md",
+      "public/data/plans.json",
+      "public/version-cache.json",
+      ".claude/settings.local.json",
+      ".serena/"
+    ],
     "staged_changes": []
   },
 
   "next_steps": [
-    "Weitere Landingpage-Features oder Dashboard-Erweiterungen nach Bedarf",
-    "Terminal-Animation-Sequenzen anpassen falls gewuenscht"
+    "Weitere Landing-Page-Features oder Dashboard-Erweiterungen nach Bedarf",
+    "Terminal-Animation-Sequenzen in terminal-script.md anpassen falls gewünscht",
+    "Optional: Screenshots oder GIFs zur README hinzufügen"
   ]
 }

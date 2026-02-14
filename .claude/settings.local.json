@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__serena__list_dir",
+      "mcp__serena__get_symbols_overview",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "mcp__serena__find_symbol",
+      "Bash(GIT_SEQUENCE_EDITOR=\"sed -i '''' ''s/^pick/reword/''\" git rebase -i 4b0c911)",
+      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch:*)",
+      "Bash(git log:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "mcp__serena__think_about_collected_information",
+      "Bash(npm run update:version:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)",
+      "Bash(git stash push:*)",
+      "Bash(git stash:*)",
+      "Bash(npm run preview:*)",
+      "Skill(save)",
+      "Bash(git checkout:*)",
+      "Bash(git rebase:*)"
+    ]
+  }
+}
