@@ -66,12 +66,12 @@ async function fetchTestCounts(): Promise<{ testCount: number; suiteCount: numbe
     const data = (await res.json()) as { content: string; encoding: string };
     const readme = Buffer.from(data.content, "base64").toString("utf-8");
 
-    // Badge pattern: Tests-1037_passing
-    const badgeMatch = readme.match(/Tests-(\d+)_passing/);
+    // Badge pattern: Tests-1037_passing or Tests-1100%2B_passing
+    const badgeMatch = readme.match(/Tests-(\d+)(?:%2B|\+)?_passing/);
     const testCount = badgeMatch ? parseInt(badgeMatch[1], 10) : 0;
 
-    // Text pattern: "1037 tests across 42 test suites"
-    const suiteMatch = readme.match(/(\d+)\s+tests?\s+across\s+(\d+)\s+test\s+suites?/);
+    // Text pattern: "1037 tests across 42 test suites" or "1100+ tests across 150+ test suites"
+    const suiteMatch = readme.match(/(\d+)(?:\+)?\s+tests?\s+across\s+(\d+)(?:\+)?\s+test\s+suites?/);
     const suiteCount = suiteMatch ? parseInt(suiteMatch[2], 10) : 0;
 
     return { testCount, suiteCount };
