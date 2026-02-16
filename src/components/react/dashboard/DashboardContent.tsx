@@ -1,8 +1,10 @@
 import { useState, useCallback, useEffect } from "react";
 import { useGitHubStatsCache } from "../../../hooks/useGitHubStatsCache";
+import { useReleaseNotes } from "../../../hooks/useReleaseNotes";
 import Icon from "../Icon";
 import StatCard from "./StatCard";
 import StargazersPanel from "./StargazersPanel";
+import ReleaseNotesPanel from "./ReleaseNotesPanel";
 import ActivityHeatmap from "./ActivityHeatmap";
 import PlansCard from "./PlansCard";
 import LanguageBar from "./LanguageBar";
@@ -55,6 +57,8 @@ export default function DashboardContent() {
   } = useGitHubStatsCache();
 
   const [showStargazers, setShowStargazers] = useState(false);
+  const [showReleases, setShowReleases] = useState(false);
+  const { release } = useReleaseNotes();
 
   // Tick every second to update the "last updated" and countdown displays
   const [, setTick] = useState(0);
@@ -82,6 +86,14 @@ export default function DashboardContent() {
 
   const toggleStargazers = useCallback(() => setShowStargazers((prev) => !prev), []);
   const closeStargazers = useCallback(() => setShowStargazers(false), []);
+  const toggleReleases = useCallback(() => setShowReleases((prev) => !prev), []);
+  const closeReleases = useCallback(() => setShowReleases(false), []);
+  const openForks = useCallback(() => {
+    window.open("https://github.com/phranck/TUIkit/forks", "_blank", "noopener,noreferrer");
+  }, []);
+  const openIssues = useCallback(() => {
+    window.open("https://github.com/phranck/TUIkit/issues", "_blank", "noopener,noreferrer");
+  }, []);
 
   return (
     <>
@@ -118,8 +130,8 @@ export default function DashboardContent() {
       <div className="mb-4 grid grid-cols-2 gap-4 md:grid-cols-4">
         <StatCard id="stat-card-stars" label="Stars" value={stats.stars} icon="star" loading={stats.loading} onClick={toggleStargazers} active={showStargazers} />
         <StatCard id="stat-card-contributors" label="Contributors" value={stats.contributors} icon="person2" loading={stats.loading} />
-        <StatCard label="Forks" value={stats.forks} icon="branch" loading={stats.loading} />
-        <StatCard label="Releases" value={stats.releases} icon="shippingbox" loading={stats.loading} />
+        <StatCard label="Forks" value={stats.forks} icon="branch" loading={stats.loading} onClick={openForks} />
+        <StatCard label="Releases" value={stats.releases} icon="shippingbox" loading={stats.loading} onClick={toggleReleases} active={showReleases} />
       </div>
 
       {/* Stargazers panel: expands between the two rows */}
@@ -132,10 +144,19 @@ export default function DashboardContent() {
         />
       </div>
 
+      {/* Release Notes panel */}
+      <div className={showReleases ? "mb-4" : ""}>
+        <ReleaseNotesPanel
+          release={release}
+          open={showReleases}
+          onClose={closeReleases}
+        />
+      </div>
+
       {/* Stat cards: row 2 */}
       <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
         <StatCard label="Commits" value={stats.totalCommits} icon="numberCircle" loading={stats.loading} />
-        <StatCard label="Open Issues" value={stats.openIssues} icon="issue" loading={stats.loading} />
+        <StatCard label="Open Issues" value={stats.openIssues} icon="issue" loading={stats.loading} onClick={openIssues} />
         <StatCard label="Open PRs" value={stats.openPRs} icon="pullRequest" loading={stats.loading} />
         <StatCard label="Merged PRs" value={stats.mergedPRs} icon="merge" loading={stats.loading} />
       </div>

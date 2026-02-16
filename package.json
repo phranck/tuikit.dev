@@ -13,7 +13,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "update:plans": "tsx scripts/update-plans-data.ts",
-    "update:version": "tsx scripts/update-version-cache.ts"
+    "update:version": "tsx scripts/update-version-cache.ts",
+    "update:releases": "tsx scripts/update-releases-cache.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.1",
@@ -23,6 +24,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
     "simple-icons": "^16.7.0"
   },
   "devDependencies": {

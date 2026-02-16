@@ -100,9 +100,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
 
+      - name: Update releases cache
+        run: npm run update:releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
+
       - name: Commit if changed
         run: |
-          git diff --quiet public/data/plans.json public/social-cache.json public/weekly-activity-cache.json public/version-cache.json && echo "No changes" && exit 0
+          git diff --quiet public/data/plans.json public/social-cache.json public/weekly-activity-cache.json public/version-cache.json public/data/releases-cache.json && echo "No changes" && exit 0
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -110,5 +115,5 @@ jobs:
           # Add files that changed
           git add -A public/
 
-          git commit -m "chore: refresh cached data (plans, social, activity, version) [skip ci]"
+          git commit -m "chore: refresh cached data (plans, social, activity, version, releases) [skip ci]"
           git push
