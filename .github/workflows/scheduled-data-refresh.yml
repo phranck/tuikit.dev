@@ -116,4 +116,8 @@ jobs:
           git add -A public/
 
           git commit -m "chore: refresh cached data (plans, social, activity, version, releases) [skip ci]"
+
+          # Pull latest changes before pushing (in case of concurrent commits)
+          git pull --rebase origin main
+
           git push
