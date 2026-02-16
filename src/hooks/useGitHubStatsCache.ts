@@ -94,6 +94,7 @@ export function useGitHubStatsCache(): UseGitHubStatsCacheReturn {
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const initializedRef = useRef(false);
+  const isMountedRef = useRef(true);
 
   // The stats to expose: override (cached) data takes priority while it's set
   // Force loading: false when we have data, so components don't show skeletons during background refresh
@@ -105,9 +106,15 @@ export function useGitHubStatsCache(): UseGitHubStatsCacheReturn {
   // -------------------------------------------------------------------------
 
   const doFetchAndCache = useCallback(async () => {
+    if (!isMountedRef.current) return; // Component unmounted, skip fetch
+
     setIsRefreshing(true);
     try {
       const freshData = await fetchData();
+
+      // Check if still mounted before updating state (prevents race conditions)
+      if (!isMountedRef.current) return;
+
       const timestamp = writeCache(freshData);
       setLastFetchedAt(timestamp);
       setNextRefreshAt(timestamp + REFRESH_INTERVAL_MS);
@@ -118,7 +125,9 @@ export function useGitHubStatsCache(): UseGitHubStatsCacheReturn {
       // On error, keep showing previous data (overrideStats stays as-is)
       // Errors are also reflected in rawStats.error via useGitHubStats if needed
     } finally {
-      setIsRefreshing(false);
+      if (isMountedRef.current) {
+        setIsRefreshing(false);
+      }
     }
   }, [fetchData]);
 
@@ -175,6 +184,7 @@ export function useGitHubStatsCache(): UseGitHubStatsCacheReturn {
     }, initialDelay);
 
     return () => {
+      isMountedRef.current = false; // Mark as unmounted to prevent state updates
       clearTimeout(timeoutId);
       if (intervalRef.current) clearInterval(intervalRef.current);
     };

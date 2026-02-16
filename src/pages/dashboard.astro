@@ -5,6 +5,7 @@ import SiteFooter from "../components/astro/SiteFooter.astro";
 import SiteNav from "../components/react/SiteNav";
 import RainOverlay from "../components/react/RainOverlay";
 import SpinnerLights from "../components/react/SpinnerLights";
+import ErrorBoundary from "../components/react/ErrorBoundary";
 import DashboardContent from "../components/react/dashboard/DashboardContent";
 ---
 
@@ -26,7 +27,9 @@ import DashboardContent from "../components/react/dashboard/DashboardContent";
       <SiteNav activePage="dashboard" client:load />
 
       <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-6xl flex-1 px-6 pt-28 pb-20">
-        <DashboardContent client:load />
+        <ErrorBoundary client:load>
+          <DashboardContent client:load />
+        </ErrorBoundary>
       </main>
 
       <SiteFooter />

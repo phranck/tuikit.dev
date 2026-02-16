@@ -4,6 +4,7 @@ import CloudBackground from "../components/astro/CloudBackground.astro";
 import FeatureCard from "../components/astro/FeatureCard.astro";
 import SiteFooter from "../components/astro/SiteFooter.astro";
 import SiteNav from "../components/react/SiteNav";
+import ErrorBoundary from "../components/react/ErrorBoundary";
 import HeroTerminal from "../components/react/HeroTerminal";
 import RainOverlay from "../components/react/RainOverlay";
 import SpinnerLights from "../components/react/SpinnerLights";
@@ -43,7 +44,9 @@ const BTN_SECONDARY =
         <!-- Hero Section -->
         <section class="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-28 pb-24 text-center sm:pt-40">
           <div class="mb-6 sm:mb-10">
-            <HeroTerminal client:visible />
+            <ErrorBoundary client:load>
+              <HeroTerminal client:visible />
+            </ErrorBoundary>
           </div>
 
           <h1

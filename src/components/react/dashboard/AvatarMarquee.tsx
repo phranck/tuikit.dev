@@ -202,10 +202,15 @@ export default function AvatarMarquee<T>({
     // Brake auto-scroll only when showing a popover for a visible avatar
     targetSpeedRef.current = 0; // Brake
 
-    setHover({
-      item,
-      x: relativeX,
-      y: targetRect.top - containerRect.top,
+    // Only update state if position actually changed (avoid unnecessary re-renders)
+    const newX = relativeX;
+    const newY = targetRect.top - containerRect.top;
+
+    setHover((prev) => {
+      if (prev && prev.x === newX && prev.y === newY && prev.item === item) {
+        return prev; // No change, prevent re-render
+      }
+      return { item, x: newX, y: newY };
     });
   }, []);
 

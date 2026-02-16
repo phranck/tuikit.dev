@@ -177,7 +177,11 @@ export default function ActivityHeatmap({ weeks, loading = false }: ActivityHeat
   }
 
 
-  const maxCommits = Math.max(1, ...fullYear.flatMap((week) => week.days));
+  // Find max commits using reduce instead of flatMap + spread (avoids blocking main thread)
+  const maxCommits = fullYear.reduce((max, week) => {
+    const weekMax = Math.max(...week.days);
+    return Math.max(max, weekMax);
+  }, 1);
   const monthLabels = buildMonthLabels(fullYear, cellSize);
 
   function handleMouseEnter(event: React.MouseEvent<HTMLDivElement>, weekTimestamp: number, dayIdx: number, count: number) {
