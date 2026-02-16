@@ -188,8 +188,8 @@ export default function DashboardContent() {
       </div>
 
       {/* Footer: cache status + rate limit */}
-      <div className="flex flex-col items-center gap-2 font-mono text-xs text-muted/60 lg:flex-row lg:justify-between lg:text-sm">
-        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center lg:justify-start lg:text-left">
+      <div className="flex flex-col items-center gap-2 font-mono text-xs text-muted/60 lg:text-sm">
+        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center">
           {lastFetchedAt && (
             <>
               <span>
@@ -209,7 +209,7 @@ export default function DashboardContent() {
           )}
         </div>
         {stats.rateLimit && (
-          <div className="text-center lg:text-right">
+          <div className="text-center">
             API rate limit: {stats.rateLimit.remaining}/{stats.rateLimit.limit} remaining
           </div>
         )}
