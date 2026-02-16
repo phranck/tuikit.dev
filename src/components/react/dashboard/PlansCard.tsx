@@ -206,6 +206,13 @@ export default function PlansCard() {
       {data.done.length > 0 && (
         <PlansSection title="Recently Completed" plans={data.done} isDone={true} />
       )}
+
+      {/* Empty state: no plans at all */}
+      {data.open.length === 0 && data.done.length === 0 && (
+        <div className="text-center text-sm text-muted/60 py-8">
+          No development plans available.
+        </div>
+      )}
     </div>
   );
 }

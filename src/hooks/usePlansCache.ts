@@ -44,6 +44,11 @@ export function usePlansCache() {
           const age = Date.now() - entry.timestamp;
 
           if (age < CACHE_DURATION) {
+            console.log("[usePlansCache] Using cached data:", {
+              openCount: entry.data.open?.length ?? 0,
+              doneCount: entry.data.done?.length ?? 0,
+              age: Math.round(age / 1000) + "s",
+            });
             setData(entry.data);
             setIsFromCache(true);
             setLastFetchedAt(entry.timestamp);
@@ -62,6 +67,12 @@ export function usePlansCache() {
 
         const plansData: PlansData = await response.json();
         const now = Date.now();
+
+        console.log("[usePlansCache] Fetched fresh data:", {
+          openCount: plansData.open?.length ?? 0,
+          doneCount: plansData.done?.length ?? 0,
+          generated: plansData.generated,
+        });
 
         // Cache it
         localStorage.setItem(CACHE_KEY, JSON.stringify({ data: plansData, timestamp: now }));
