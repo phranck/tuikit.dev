@@ -187,8 +187,13 @@ export default function DashboardContent() {
         <CommitList commits={stats.recentCommits} loading={stats.loading} />
       </div>
 
-      {/* Footer: cache status + rate limit */}
+      {/* Footer: rate limit + cache status */}
       <div className="flex flex-col items-center gap-2 font-mono text-xs text-muted/60 lg:text-sm">
+        {stats.rateLimit && (
+          <div className="text-center">
+            API rate limit: {stats.rateLimit.remaining}/{stats.rateLimit.limit} remaining
+          </div>
+        )}
         <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center">
           {lastFetchedAt && (
             <>
@@ -208,11 +213,6 @@ export default function DashboardContent() {
             </>
           )}
         </div>
-        {stats.rateLimit && (
-          <div className="text-center">
-            API rate limit: {stats.rateLimit.remaining}/{stats.rateLimit.limit} remaining
-          </div>
-        )}
       </div>
     </>
   );
