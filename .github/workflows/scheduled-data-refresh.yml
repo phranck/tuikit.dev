@@ -36,13 +36,32 @@ jobs:
       - name: Determine refresh mode
         id: mode
         run: |
-          # Full refresh on Sundays (cron) or if manually triggered with full_refresh=true
-          if [[ "${{ github.event.schedule }}" == "0 4 * * 0" ]] || [[ "${{ inputs.full_refresh }}" == "true" ]]; then
+          COUNTER_FILE=".github/.social-cache-run-counter"
+
+          # Read current counter (default to 0 if file doesn't exist)
+          if [[ -f "$COUNTER_FILE" ]]; then
+            COUNTER=$(cat "$COUNTER_FILE")
+          else
+            COUNTER=0
+          fi
+
+          # Increment counter
+          COUNTER=$((COUNTER + 1))
+          echo "$COUNTER" > "$COUNTER_FILE"
+          echo "Run counter: $COUNTER"
+
+          # Full refresh conditions:
+          # 1. Every 20 runs (counter >= 20)
+          # 2. Sundays at 4 AM UTC
+          # 3. Manual trigger with full_refresh=true
+          if [[ "$COUNTER" -ge 20 ]] || [[ "${{ github.event.schedule }}" == "0 4 * * 0" ]] || [[ "${{ inputs.full_refresh }}" == "true" ]]; then
             echo "is_full_refresh=true" >> "$GITHUB_OUTPUT"
-            echo "Running FULL social cache refresh"
+            echo "Running FULL social cache refresh (run #$COUNTER)"
+            # Reset counter after full refresh
+            echo "0" > "$COUNTER_FILE"
           else
             echo "is_full_refresh=false" >> "$GITHUB_OUTPUT"
-            echo "Running incremental update"
+            echo "Running incremental update (run #$COUNTER/20)"
           fi
 
       - name: Update plans data
@@ -107,13 +126,17 @@ jobs:
 
       - name: Commit if changed
         run: |
-          git diff --quiet public/data/plans.json public/social-cache.json public/weekly-activity-cache.json public/version-cache.json public/data/releases-cache.json && echo "No changes" && exit 0
+          # Check if data files or counter changed
+          if git diff --quiet public/data/plans.json public/social-cache.json public/weekly-activity-cache.json public/version-cache.json public/data/releases-cache.json .github/.social-cache-run-counter; then
+            echo "No changes"
+            exit 0
+          fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add files that changed
-          git add -A public/
+          # Add data files and counter
+          git add -A public/ .github/.social-cache-run-counter
 
           git commit -m "chore: refresh cached data (plans, social, activity, version, releases) [skip ci]"
 

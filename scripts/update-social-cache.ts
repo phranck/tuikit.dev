@@ -1071,12 +1071,18 @@ async function main() {
     cache.entries = {};
   }
 
-  // Find new stargazers (not in cache)
+  // Determine which users to process:
+  // - Full refresh: all stargazers
+  // - Incremental: only users with no social accounts yet (missing all three)
   const toProcess = isFullRefresh
     ? stargazers
-    : stargazers.filter((s) => !cachedLogins.has(s.login));
+    : stargazers.filter((s) => {
+        const cached = cache.entries[s.login];
+        // Process if: not in cache OR has no social accounts yet
+        return !cached || (!cached.mastodon && !cached.twitter && !cached.bluesky);
+      });
 
-  console.log(`\nProcessing ${toProcess.length} users...`);
+  console.log(`\nProcessing ${toProcess.length} users (${isFullRefresh ? 'full refresh' : 'users without social accounts'})...`);
 
   for (const stargazer of toProcess) {
     const { login } = stargazer;
