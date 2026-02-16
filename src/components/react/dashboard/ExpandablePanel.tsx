@@ -1,4 +1,5 @@
 import { useRef, useEffect, type ReactNode } from "react";
+import { useEscapeKey } from "../../../hooks/useEscapeKey";
 
 interface ExpandablePanelProps {
   /** Whether the panel is visible/expanded */
@@ -33,14 +34,7 @@ export default function ExpandablePanel({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // ESC key handler
-  useEffect(() => {
-    if (!open) return;
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose?.();
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [open, onClose]);
+  useEscapeKey(onClose, open);
 
   // Height animation
   useEffect(() => {

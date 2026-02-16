@@ -1,6 +1,7 @@
 
 
 import { useRef, useEffect, useCallback, useState, useMemo, type ReactNode } from "react";
+import { useEscapeKey } from "../../../hooks/useEscapeKey";
 import HoverPopover from "./HoverPopover";
 
 /** Avatar size in pixels. */
@@ -91,6 +92,9 @@ export default function AvatarMarquee<T>({
   // Memoize duplicated items and widths to avoid recreating on every render
   const duplicatedItems = useMemo(() => [...items, ...items, ...items], [items]);
   const singleSetWidth = useMemo(() => items.length * (AVATAR_SIZE + AVATAR_GAP), [items.length]);
+
+  // ESC key handler
+  useEscapeKey(onClose, open);
 
   // Cleanup timeout on unmount
   useEffect(() => {
