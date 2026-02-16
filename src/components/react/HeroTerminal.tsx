@@ -74,6 +74,8 @@ export default function HeroTerminal() {
    * 3 = afterglow dot fading out.
    */
   const [shutdownPhase, setShutdownPhase] = useState<1 | 2 | 3 | null>(null);
+  /** Ref to track shutdownPhase for stable callbacks (avoids re-creating handlePowerOff). */
+  const shutdownPhaseRef = useRef<1 | 2 | 3 | null>(null);
   /** Guards against rapid double-clicks bypassing the `powered` state check. */
   const poweringOnRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -109,6 +111,8 @@ export default function HeroTerminal() {
 
   /** Whether the remaining (non-critical) audio has been loaded. */
   const remainingAudioLoadedRef = useRef(false);
+  /** Whether critical sounds (power-on, boot) are ready to play. */
+  const criticalSoundsReadyRef = useRef(false);
 
   /** Eagerly preload Howler.js + critical sounds (power-on, boot) on mount. */
   useEffect(() => {
@@ -119,12 +123,38 @@ export default function HeroTerminal() {
         HowlClass = module.Howl;
       }
       if (cancelled) return;
+
       // Only preload if not already created (e.g. by a quick power-on click)
       if (!powerOnAudioRef.current) {
-        powerOnAudioRef.current = new HowlClass({ src: ["/sounds/power-on.mp3"], volume: 0.3, preload: true });
+        powerOnAudioRef.current = new HowlClass({
+          src: ["/sounds/power-on.mp3"],
+          volume: 0.3,
+          preload: true,
+          onload: () => {
+            if (!bootAudioRef.current?.state || bootAudioRef.current.state() === "loaded") {
+              criticalSoundsReadyRef.current = true;
+            }
+          },
+          onloaderror: (id, err) => {
+            console.warn("Failed to load power-on sound:", err);
+          }
+        });
       }
+
       if (!bootAudioRef.current) {
-        bootAudioRef.current = new HowlClass({ src: ["/sounds/hard-drive-boot.m4a"], volume: 0.6, preload: true });
+        bootAudioRef.current = new HowlClass({
+          src: ["/sounds/hard-drive-boot.m4a"],
+          volume: 0.6,
+          preload: true,
+          onload: () => {
+            if (!powerOnAudioRef.current?.state || powerOnAudioRef.current.state() === "loaded") {
+              criticalSoundsReadyRef.current = true;
+            }
+          },
+          onloaderror: (id, err) => {
+            console.warn("Failed to load boot sound:", err);
+          }
+        });
       }
     })();
     return () => { cancelled = true; };
@@ -190,14 +220,16 @@ export default function HeroTerminal() {
     if (powered || poweringOnRef.current) return;
     poweringOnRef.current = true;
 
-    // Play critical sounds immediately (preloaded on mount)
-    if (powerOnAudioRef.current) {
-      powerOnAudioRef.current.seek(0);
-      powerOnAudioRef.current.play();
-    }
-    if (bootAudioRef.current) {
-      bootAudioRef.current.seek(0);
-      bootAudioRef.current.play();
+    // Play critical sounds only if they're fully preloaded
+    if (criticalSoundsReadyRef.current) {
+      if (powerOnAudioRef.current) {
+        powerOnAudioRef.current.seek(0);
+        powerOnAudioRef.current.play();
+      }
+      if (bootAudioRef.current) {
+        bootAudioRef.current.seek(0);
+        bootAudioRef.current.play();
+      }
     }
 
     // Lazy-load remaining sounds (spin, power-off, seek) without blocking
@@ -251,7 +283,7 @@ export default function HeroTerminal() {
 
   /** Power off: run CRT shutdown animation, then zoom back and kill power. */
   const handlePowerOff = useCallback(() => {
-    if (shutdownPhase !== null) return; // Already shutting down
+    if (shutdownPhaseRef.current !== null) return; // Already shutting down
     clearAllTimers();
     poweringOnRef.current = false;
     
@@ -286,7 +318,12 @@ export default function HeroTerminal() {
       setShutdownPhase(null);
       setZoomed(false);
     }, CRT_SHUTDOWN_TOTAL_MS);
-  }, [shutdownPhase, clearAllTimers, scheduleTimer]);
+  }, [clearAllTimers, scheduleTimer]);
+
+  /** Sync shutdownPhaseRef with shutdownPhase state for stable callbacks. */
+  useEffect(() => {
+    shutdownPhaseRef.current = shutdownPhase;
+  }, [shutdownPhase]);
 
   /** Close on Escape key. */
   useEffect(() => {
