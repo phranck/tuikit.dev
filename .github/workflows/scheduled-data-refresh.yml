@@ -136,7 +136,7 @@ jobs:
           # Add data files and counter
           git add -A public/ .github/.social-cache-run-counter
 
-          git commit -m "chore: refresh cached data (plans, social, activity, version, releases) [skip ci]"
+          git commit -m "chore: refresh cached data (plans, social, activity, version, releases)"
 
           # Pull latest changes before pushing (in case of concurrent commits)
           git pull --rebase origin main
