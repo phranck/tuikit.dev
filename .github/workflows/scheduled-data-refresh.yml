@@ -15,6 +15,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: scheduled-data-refresh
+  cancel-in-progress: false
+
 jobs:
   refresh-all:
     runs-on: ubuntu-latest
