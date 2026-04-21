@@ -18,6 +18,11 @@ dist/
 *.swo
 .DS_Store
 
+# Tooling caches (local, per-developer)
+.claude/settings.local.json
+.claude/session-state.json
+.serena/
+
 # Generated files
 src/components/react/terminal-data.ts
 project-stats.json
