@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-04-21T13:26:56.928Z",
+  "generatedAt": "2026-04-21T13:28:37.012Z",
   "latest": {
     "version": "0.6.0",
     "tagName": "v0.6.0",
     "name": "v0.6.0",
     "publishedAt": "2026-04-21T13:25:32Z",
     "htmlUrl": "https://github.com/phranck/TUIkit/releases/tag/v0.6.0",
-    "body": "## Bug Fixes\n\n- **NavigationSplitView focus handling**: Tab now navigates within the active section first and only advances to the next section after the last element. Arrow keys (↑/↓) no longer wrap at section boundaries.\n- `moveFocusInSection` gains a `wrap: Bool` parameter and returns `Bool` to signal boundary hits.\n\n## Tests\n\n- Add `tabNavigatesWithinSectionFirst` and `arrowKeysDoNotWrapAtBoundary` in `FocusSectionTests` (1172 tests total)\n\n**Full Changelog**: https://github.com/phranck/TUIkit/compare/v0.5.2...v0.6.0",
+    "body": "## Bug Fixes\n\n- **NavigationSplitView focus handling**: Tab now navigates within the active section first and only advances to the next section after the last element. Arrow keys (↑/↓) no longer wrap at section boundaries. `moveFocusInSection` gains a `wrap: Bool` parameter and returns `Bool` to signal boundary hits.\n- **Palette surface backgrounds**: Fix incorrect surface background rendering in the render loop.\n- **Concurrency lock**: Restrict `os_unfair_lock` usage to macOS; Linux paths now use the cross-platform fallback.\n\n## New APIs\n\n- `Scene.paletteOverride(_:)` for overriding the active palette on a scene.\n\n## Tests\n\n- Add `tabNavigatesWithinSectionFirst` and `arrowKeysDoNotWrapAtBoundary` in `FocusSectionTests`.\n- Add `RenderLoopPaletteIntegrationTests` (palette surface + render loop coverage).\n- Total: 1172 tests.\n\n**Full Changelog**: https://github.com/phranck/TUIkit/compare/v0.5.1...v0.6.0",
     "author": {
       "login": "phranck",
       "avatarUrl": "https://avatars.githubusercontent.com/u/255022500?v=4",
