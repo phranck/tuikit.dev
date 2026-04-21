@@ -14,14 +14,16 @@ dist/
 # IDE
 .idea/
 .vscode/
+.cursor/
 *.swp
 *.swo
 .DS_Store
 
-# Tooling caches (local, per-developer)
-.claude/settings.local.json
-.claude/session-state.json
+# AI tooling / local caches (per-developer)
+.claude/
 .serena/
+AGENTS.md
+WHATS-NEXT.md
 
 # Generated files
 src/components/react/terminal-data.ts
