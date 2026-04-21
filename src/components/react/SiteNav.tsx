@@ -23,7 +23,7 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { href: "/dashboard", label: "Dashboard", icon: "chart", page: "dashboard" },
-  { href: "https://docs.tuikit.dev", label: "Docs", icon: "book", external: true },
+  { href: "https://docs.tuikit.dev/documentation/tuikit/", label: "Docs", icon: "book", external: true },
   { href: "https://github.com/phranck/TUIkit", label: "GitHub", icon: "github", external: true },
 ];
 

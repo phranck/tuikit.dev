@@ -11,7 +11,7 @@
 
 > Official landing page and live dashboard for **TUIkit** — the Swift Terminal UI framework
 
-**[🌐 Live Site](https://tuikit.dev)** • **[📦 TUIkit Repository](https://github.com/phranck/TUIkit)** • **[📖 Documentation](https://docs.tuikit.dev)**
+**[🌐 Live Site](https://tuikit.dev)** • **[📦 TUIkit Repository](https://github.com/phranck/TUIkit)** • **[📖 Documentation](https://docs.tuikit.dev/documentation/tuikit/)**
 
 ## About TUIkit
 
