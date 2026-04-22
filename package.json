@@ -14,7 +14,8 @@
     "preview": "astro preview",
     "update:plans": "tsx scripts/update-plans-data.ts",
     "update:version": "tsx scripts/update-version-cache.ts",
-    "update:releases": "tsx scripts/update-releases-cache.ts"
+    "update:releases": "tsx scripts/update-releases-cache.ts",
+    "update:weekly-activity": "tsx scripts/update-weekly-activity.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.1",

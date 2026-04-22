@@ -82,50 +82,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
 
       - name: Update weekly activity cache
+        run: npm run update:weekly-activity
         env:
-          GH_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
-        run: |
-          MAX_RETRIES=10
-          RETRY_DELAY=30
-          OUTPUT_FILE="public/weekly-activity-cache.json"
-          SUCCESS=0
-
-          # Warm-up request: GitHub returns 202 and starts background stats computation
-          curl -s -o /dev/null \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/repos/phranck/TUIkit/stats/commit_activity"
-          sleep 5
-
-          for i in $(seq 1 $MAX_RETRIES); do
-            echo "Attempt $i of $MAX_RETRIES..."
-
-            HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/activity.json \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer $GH_TOKEN" \
-              "https://api.github.com/repos/phranck/TUIkit/stats/commit_activity")
-
-            if [ "$HTTP_CODE" = "200" ]; then
-              # Verify it's valid JSON array with data
-              if jq -e 'type == "array" and length > 0' /tmp/activity.json > /dev/null 2>&1; then
-                echo "Success! Got $(jq 'length' /tmp/activity.json) weeks of data."
-                cp /tmp/activity.json "$OUTPUT_FILE"
-                SUCCESS=1
-                break
-              else
-                echo "Got 200 but empty or invalid data, retrying..."
-              fi
-            else
-              echo "Got HTTP $HTTP_CODE, waiting ${RETRY_DELAY}s before retry..."
-            fi
-
-            sleep $RETRY_DELAY
-          done
-
-          if [ "$SUCCESS" -ne 1 ]; then
-            echo "Failed to fetch valid weekly activity data after $MAX_RETRIES attempts"
-            exit 1
-          fi
+          GITHUB_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN }}
 
       - name: Update version cache
         run: npm run update:version
