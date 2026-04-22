@@ -324,38 +324,19 @@ export function useGitHubStats(options?: UseGitHubStatsOptions): UseGitHubStatsR
 
         ghFetch<LanguageBreakdown>("/languages", signal),
 
-        // Try fetching weekly activity; on failure or empty response, fall back to local cache if available
+        // Weekly activity is pre-computed into /weekly-activity-cache.json every
+        // 30 min by the Scheduled Data Refresh workflow. Read cache directly.
         (async () => {
           try {
-            const res = await ghFetch<WeeklyActivity[]>("/stats/commit_activity", signal);
-            // If GitHub returns an empty array, the stats endpoint may be pending (202): try cache
-            if (Array.isArray(res.data) && res.data.length > 0) return res;
-
-            // Attempt to read cached weeklyActivity from public JSON
-            try {
-              const cacheResp = await fetch('/weekly-activity-cache.json', { signal });
-              if (cacheResp.ok) {
-                const cached = await cacheResp.json();
-                return { data: cached as WeeklyActivity[], remaining: res.remaining, limit: res.limit };
-              }
-            } catch {
-              // ignore cache read errors
+            const cacheResp = await fetch('/weekly-activity-cache.json', { signal });
+            if (cacheResp.ok) {
+              const cached = await cacheResp.json();
+              return { data: cached as WeeklyActivity[], remaining: 0, limit: 60 };
             }
-
-            return { data: [] as WeeklyActivity[], remaining: res.remaining, limit: res.limit };
           } catch {
-            // On network/API failure, attempt cache
-            try {
-              const cacheResp = await fetch('/weekly-activity-cache.json', { signal });
-              if (cacheResp.ok) {
-                const cached = await cacheResp.json();
-                return { data: cached as WeeklyActivity[], remaining: 0, limit: 60 };
-              }
-            } catch {
-              // ignore
-            }
-            return { data: [] as WeeklyActivity[], remaining: 0, limit: 60 };
+            // ignore
           }
+          return { data: [] as WeeklyActivity[], remaining: 0, limit: 60 };
         })(),
 
         ghCount("/pulls?state=open", signal),
