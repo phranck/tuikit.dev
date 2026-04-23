@@ -1,4 +1,15 @@
 {
-  "generatedAt": "2026-04-23T06:13:51.521Z",
-  "entries": {}
+  "generatedAt": "2026-04-23T07:09:17.463Z",
+  "entries": {
+    "sgade": {
+      "login": "sgade",
+      "mastodon": {
+        "handle": "@sense@mastodon.social",
+        "url": "https://mastodon.social/@sense",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-04-23T07:09:17.462Z"
+    }
+  }
 }
