@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-23T18:10:19.684Z",
+  "generated": "2026-04-23T18:23:55.906Z",
   "open": [
     {
       "date": "2026-02-26",
@@ -10,8 +10,8 @@
     {
       "date": "2026-02-14",
       "slug": "project-analysis-improvements",
-      "title": "Project Analysis: Improvement Plan",
-      "preface": "This plan tracks all recommendations from `papers/project_analysis.md` (2026-02-14).\nThe analysis reviewed 135 Swift source files (28,126 lines) and identified improvements\nacross four priority levels. This checklist serves as the single source of truth for\ntracking progress."
+      "title": "Project Analysis Improvements",
+      "preface": "Tracks all recommendations from `papers/project_analysis.md` (2026-02-14). The analysis reviewed 135 Swift source files (28,126 lines) and identified 29 improvements across four priority levels (P1 quick wins, P2 high-impact/medium-effort, P3 medium-impact/higher-effort, P4 long-term architectural) plus nine additional findings (code style, test coverage). Twenty-four of twenty-nine items are complete; this plan focuses the remaining five items on the test-coverage gap in image processing, notifications, view extensions, and the `App/` subsystem, plus the organizational question around `project-template/`."
     },
     {
       "date": "2026-02-02",
