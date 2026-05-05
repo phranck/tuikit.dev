@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T22:21:36.525Z",
+  "generatedAt": "2026-05-05T22:48:39.246Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -30,6 +30,16 @@
         "verified": true
       },
       "updatedAt": "2026-05-05T19:42:03.752Z"
+    },
+    "NikitaKurpas": {
+      "login": "NikitaKurpas",
+      "twitter": {
+        "handle": "@nikkurpas",
+        "url": "https://x.com/nikkurpas",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-05-05T22:48:39.246Z"
     }
   }
 }
