@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-09T09:32:09.583Z",
+  "generatedAt": "2026-05-09T10:23:00.482Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -9,7 +9,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-08T18:29:12.739Z"
+      "updatedAt": "2026-05-09T10:21:51.834Z"
     },
     "mlaves": {
       "login": "mlaves",
@@ -19,7 +19,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-08T18:29:50.706Z"
+      "updatedAt": "2026-05-09T10:22:25.755Z"
     },
     "JohJakob": {
       "login": "JohJakob",
@@ -29,7 +29,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-08T18:30:04.939Z"
+      "updatedAt": "2026-05-09T10:22:37.624Z"
     },
     "NikitaKurpas": {
       "login": "NikitaKurpas",
@@ -39,7 +39,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-08T18:30:18.307Z"
+      "updatedAt": "2026-05-09T10:22:48.985Z"
     },
     "lucaArchidiacono": {
       "login": "lucaArchidiacono",
@@ -49,7 +49,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-09T06:45:33.234Z"
+      "updatedAt": "2026-05-09T10:23:00.482Z"
     }
   }
 }
