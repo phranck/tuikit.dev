@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-09T05:56:48.620Z",
+  "generatedAt": "2026-05-09T06:45:33.235Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -40,6 +40,16 @@
         "verified": true
       },
       "updatedAt": "2026-05-08T18:30:18.307Z"
+    },
+    "lucaArchidiacono": {
+      "login": "lucaArchidiacono",
+      "twitter": {
+        "handle": "@archi_luc",
+        "url": "https://x.com/archi_luc",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-05-09T06:45:33.234Z"
     }
   }
 }
