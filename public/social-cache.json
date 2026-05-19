@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T09:09:03.361Z",
+  "generatedAt": "2026-05-19T10:43:29.715Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -9,7 +9,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:46:41.846Z"
+      "updatedAt": "2026-05-19T10:41:51.664Z"
     },
     "mlaves": {
       "login": "mlaves",
@@ -19,7 +19,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:47:23.826Z"
+      "updatedAt": "2026-05-19T10:42:26.232Z"
     },
     "JohJakob": {
       "login": "JohJakob",
@@ -29,7 +29,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:47:40.111Z"
+      "updatedAt": "2026-05-19T10:42:38.795Z"
     },
     "NikitaKurpas": {
       "login": "NikitaKurpas",
@@ -39,7 +39,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:47:53.926Z"
+      "updatedAt": "2026-05-19T10:42:49.293Z"
     },
     "lucaArchidiacono": {
       "login": "lucaArchidiacono",
@@ -49,7 +49,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:48:08.061Z"
+      "updatedAt": "2026-05-19T10:43:00.944Z"
     },
     "rawillk": {
       "login": "rawillk",
@@ -59,7 +59,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:48:29.382Z"
+      "updatedAt": "2026-05-19T10:43:17.895Z"
     },
     "toastersocks": {
       "login": "toastersocks",
@@ -69,7 +69,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-18T13:48:30.894Z"
+      "updatedAt": "2026-05-19T10:43:19.095Z"
     }
   }
 }
