@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T06:18:07.609Z",
+  "generatedAt": "2026-05-24T07:35:00.584Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -80,6 +80,16 @@
         "verified": true
       },
       "updatedAt": "2026-05-24T05:23:38.438Z"
+    },
+    "MatiMax": {
+      "login": "MatiMax",
+      "twitter": {
+        "handle": "@IamMatiMax",
+        "url": "https://x.com/IamMatiMax",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-05-24T07:35:00.583Z"
     }
   }
 }
