@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T20:30:00.858Z",
+  "generatedAt": "2026-05-31T20:54:02.474Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -9,7 +9,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:33:13.556Z"
+      "updatedAt": "2026-05-31T20:51:34.639Z"
     },
     "mlaves": {
       "login": "mlaves",
@@ -19,7 +19,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:33:53.017Z"
+      "updatedAt": "2026-05-31T20:52:12.866Z"
     },
     "JohJakob": {
       "login": "JohJakob",
@@ -29,7 +29,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:34:05.612Z"
+      "updatedAt": "2026-05-31T20:52:28.342Z"
     },
     "NikitaKurpas": {
       "login": "NikitaKurpas",
@@ -39,7 +39,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:34:17.567Z"
+      "updatedAt": "2026-05-31T20:52:41.911Z"
     },
     "lucaArchidiacono": {
       "login": "lucaArchidiacono",
@@ -49,7 +49,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:34:29.264Z"
+      "updatedAt": "2026-05-31T20:52:56.290Z"
     },
     "rawillk": {
       "login": "rawillk",
@@ -59,7 +59,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:34:46.153Z"
+      "updatedAt": "2026-05-31T20:53:17.512Z"
     },
     "toastersocks": {
       "login": "toastersocks",
@@ -69,7 +69,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:34:47.087Z"
+      "updatedAt": "2026-05-31T20:53:18.753Z"
     },
     "emlynmu": {
       "login": "emlynmu",
@@ -79,7 +79,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:34:59.743Z"
+      "updatedAt": "2026-05-31T20:53:34.030Z"
     },
     "MatiMax": {
       "login": "MatiMax",
@@ -89,7 +89,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:35:10.641Z"
+      "updatedAt": "2026-05-31T20:53:47.517Z"
     },
     "gtirloni": {
       "login": "gtirloni",
@@ -99,7 +99,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-05-31T05:35:12.710Z"
+      "updatedAt": "2026-05-31T20:53:48.952Z"
     }
   }
 }
