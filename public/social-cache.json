@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T22:48:43.749Z",
+  "generatedAt": "2026-05-31T23:24:39.031Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -100,6 +100,28 @@
         "verified": true
       },
       "updatedAt": "2026-05-31T20:53:48.952Z"
+    },
+    "ferrousguy": {
+      "login": "ferrousguy",
+      "mastodon": {
+        "handle": "@ferrousguy@mastodon.social",
+        "url": "https://mastodon.social/@ferrousguy",
+        "source": "github",
+        "verified": true
+      },
+      "twitter": {
+        "handle": "@FerrousGuy",
+        "url": "https://x.com/FerrousGuy",
+        "source": "github",
+        "verified": true
+      },
+      "bluesky": {
+        "handle": "@ferrousguy.bsky.social",
+        "url": "https://bsky.app/profile/ferrousguy.bsky.social",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-05-31T23:24:39.031Z"
     }
   }
 }
