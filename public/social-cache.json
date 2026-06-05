@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T08:23:17.270Z",
+  "generatedAt": "2026-06-05T09:47:47.693Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -122,6 +122,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-04T13:04:23.685Z"
+    },
+    "samdze": {
+      "login": "samdze",
+      "twitter": {
+        "handle": "@Samdzeq",
+        "url": "https://x.com/Samdzeq",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-05T09:47:47.693Z"
     }
   }
 }
