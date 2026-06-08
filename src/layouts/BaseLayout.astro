@@ -50,9 +50,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Preload critical sounds for instant playback on power-on -->
-    <link rel="preload" href="/sounds/power-on.mp3" as="audio" crossorigin />
-    <link rel="preload" href="/sounds/hard-drive-boot.m4a" as="audio" crossorigin />
+    <!-- Preload critical sounds for instant playback on power-on.
+         Same-origin: NO `crossorigin` attribute, otherwise the preload
+         would not match Howler's non-CORS fetch and the browser would
+         download the files a second time. -->
+    <link rel="preload" href="/sounds/power-on.mp3" as="audio" />
+    <link rel="preload" href="/sounds/hard-drive-boot.m4a" as="audio" />
 
     <!-- Analytics -->
     <link rel="preconnect" href="https://cloud.umami.is" />

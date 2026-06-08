@@ -111,10 +111,18 @@ export default function HeroTerminal() {
 
   /** Whether the remaining (non-critical) audio has been loaded. */
   const remainingAudioLoadedRef = useRef(false);
-  /** Whether critical sounds (power-on, boot) are ready to play. */
-  const criticalSoundsReadyRef = useRef(false);
 
-  /** Eagerly preload Howler.js + critical sounds (power-on, boot) on mount. */
+  /**
+   * Eagerly preload Howler.js + critical sounds (power-on, boot) on mount.
+   *
+   * Both critical sounds use `html5: true` so they stream via the HTML5
+   * `<audio>` element instead of buffering the full file through the
+   * Web Audio API. This lets `play()` start almost immediately even if
+   * the download is not finished, eliminating the race between an early
+   * power-button click and a slow audio fetch. The `<link rel="preload">`
+   * tags in BaseLayout.astro warm the HTTP cache so the same request
+   * (no `crossorigin`) hits without a second round-trip.
+   */
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -129,13 +137,9 @@ export default function HeroTerminal() {
         powerOnAudioRef.current = new HowlClass({
           src: ["/sounds/power-on.mp3"],
           volume: 0.3,
+          html5: true,
           preload: true,
-          onload: () => {
-            if (!bootAudioRef.current?.state || bootAudioRef.current.state() === "loaded") {
-              criticalSoundsReadyRef.current = true;
-            }
-          },
-          onloaderror: (id, err) => {
+          onloaderror: (_id, err) => {
             console.warn("Failed to load power-on sound:", err);
           }
         });
@@ -145,13 +149,9 @@ export default function HeroTerminal() {
         bootAudioRef.current = new HowlClass({
           src: ["/sounds/hard-drive-boot.m4a"],
           volume: 0.6,
+          html5: true,
           preload: true,
-          onload: () => {
-            if (!powerOnAudioRef.current?.state || powerOnAudioRef.current.state() === "loaded") {
-              criticalSoundsReadyRef.current = true;
-            }
-          },
-          onloaderror: (id, err) => {
+          onloaderror: (_id, err) => {
             console.warn("Failed to load boot sound:", err);
           }
         });
@@ -220,17 +220,19 @@ export default function HeroTerminal() {
     if (powered || poweringOnRef.current) return;
     poweringOnRef.current = true;
 
-    // Play critical sounds only if they're fully preloaded
-    if (criticalSoundsReadyRef.current) {
-      if (powerOnAudioRef.current) {
-        powerOnAudioRef.current.seek(0);
-        powerOnAudioRef.current.play();
-      }
-      if (bootAudioRef.current) {
-        bootAudioRef.current.seek(0);
-        bootAudioRef.current.play();
-      }
-    }
+    // Critical sounds use `html5: true` and streaming playback, so we can
+    // always trigger `play()` directly: if the file is not fully buffered
+    // yet, the HTML5 audio element starts as soon as enough data is
+    // available. This removes the race where a quick click was silenced
+    // because the eager preload had not finished yet.
+    const playCritical = (sound: typeof powerOnAudioRef.current) => {
+      if (!sound) return;
+      // `seek(0)` is safe on an unloaded html5 sound (no-op until loaded).
+      sound.seek(0);
+      sound.play();
+    };
+    playCritical(powerOnAudioRef.current);
+    playCritical(bootAudioRef.current);
 
     // Lazy-load remaining sounds (spin, power-off, seek) without blocking
     ensureRemainingAudioLoaded();
