@@ -339,7 +339,7 @@ export function parseTerminalScript(): TerminalScript {
   // Extract sections
   const bootMatch = content.match(/## Boot Sequence\s*```terminal\n([\s\S]*?)\n```/);
   const schoolMatch = content.match(/## School Computer Scene[\s\S]*?```terminal\n([\s\S]*?)\n```/);
-  const joshuaMatch = content.match(/## Joshua\/WOPR Scene[\s\S]*?### First Contact([\s\S]*?)## UNIX Command Pool/);
+  const joshuaMatch = content.match(/## Joshua\/pandora Scene[\s\S]*?### First Contact([\s\S]*?)## UNIX Command Pool/);
   const unixMatch = content.match(/## UNIX Command Pool([\s\S]*?)## Special Effects/);
   
   // Parse config
