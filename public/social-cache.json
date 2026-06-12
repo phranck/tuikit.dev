@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T15:06:54.037Z",
+  "generatedAt": "2026-06-12T16:34:49.325Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -132,6 +132,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-12T01:51:34.189Z"
+    },
+    "castlele": {
+      "login": "castlele",
+      "twitter": {
+        "handle": "@castlelecs",
+        "url": "https://x.com/castlelecs",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-12T16:34:49.325Z"
     }
   }
 }
