@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T14:18:22.972Z",
+  "generatedAt": "2026-06-14T15:16:54.814Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -142,6 +142,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-14T05:42:00.830Z"
+    },
+    "KyawTheMonkey": {
+      "login": "KyawTheMonkey",
+      "twitter": {
+        "handle": "@KyawTheMonkey",
+        "url": "https://x.com/KyawTheMonkey",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-14T15:16:42.824Z"
     }
   }
 }
