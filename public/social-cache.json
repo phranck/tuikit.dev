@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T23:59:32.062Z",
+  "generatedAt": "2026-06-15T00:48:36.212Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -152,6 +152,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-14T23:32:44.387Z"
+    },
+    "bclews": {
+      "login": "bclews",
+      "bluesky": {
+        "handle": "@clews.id.au",
+        "url": "https://bsky.app/profile/clews.id.au",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-15T00:48:36.212Z"
     }
   }
 }
