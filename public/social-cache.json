@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T21:35:28.529Z",
+  "generatedAt": "2026-06-15T22:44:29.102Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -188,6 +188,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-15T21:35:28.529Z"
+    },
+    "rcarver": {
+      "login": "rcarver",
+      "mastodon": {
+        "handle": "@rcarver@mastodon.social",
+        "url": "https://mastodon.social/@rcarver",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-15T22:44:27.841Z"
     }
   }
 }
