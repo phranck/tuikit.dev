@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T16:41:04.684Z",
+  "generatedAt": "2026-06-15T18:35:07.140Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -162,6 +162,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-15T00:48:36.212Z"
+    },
+    "joevandeventer": {
+      "login": "joevandeventer",
+      "mastodon": {
+        "handle": "@fritter@tilde.zone",
+        "url": "https://tilde.zone/@fritter",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-15T18:35:07.140Z"
     }
   }
 }
