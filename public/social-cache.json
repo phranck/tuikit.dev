@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T13:19:10.819Z",
+  "generatedAt": "2026-06-17T14:40:07.546Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -9,7 +9,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:17:45.653Z"
+      "updatedAt": "2026-06-17T14:33:02.231Z"
     },
     "mlaves": {
       "login": "mlaves",
@@ -19,7 +19,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:18:18.185Z"
+      "updatedAt": "2026-06-17T14:33:39.392Z"
     },
     "JohJakob": {
       "login": "JohJakob",
@@ -29,7 +29,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:18:31.290Z"
+      "updatedAt": "2026-06-17T14:33:52.359Z"
     },
     "NikitaKurpas": {
       "login": "NikitaKurpas",
@@ -39,7 +39,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:18:42.200Z"
+      "updatedAt": "2026-06-17T14:34:04.578Z"
     },
     "lucaArchidiacono": {
       "login": "lucaArchidiacono",
@@ -49,7 +49,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:18:53.952Z"
+      "updatedAt": "2026-06-17T14:34:25.064Z"
     },
     "rawillk": {
       "login": "rawillk",
@@ -59,7 +59,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:19:13.201Z"
+      "updatedAt": "2026-06-17T14:34:43.205Z"
     },
     "toastersocks": {
       "login": "toastersocks",
@@ -69,7 +69,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:19:16.519Z"
+      "updatedAt": "2026-06-17T14:34:46.943Z"
     },
     "emlynmu": {
       "login": "emlynmu",
@@ -79,7 +79,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:19:28.865Z"
+      "updatedAt": "2026-06-17T14:35:00.569Z"
     },
     "MatiMax": {
       "login": "MatiMax",
@@ -89,7 +89,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:19:40.980Z"
+      "updatedAt": "2026-06-17T14:35:15.326Z"
     },
     "gtirloni": {
       "login": "gtirloni",
@@ -99,7 +99,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:19:42.754Z"
+      "updatedAt": "2026-06-17T14:35:17.016Z"
     },
     "ferrousguy": {
       "login": "ferrousguy",
@@ -121,7 +121,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:19:57.363Z"
+      "updatedAt": "2026-06-17T14:35:31.605Z"
     },
     "samdze": {
       "login": "samdze",
@@ -131,7 +131,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:20:13.953Z"
+      "updatedAt": "2026-06-17T14:35:44.626Z"
     },
     "castlele": {
       "login": "castlele",
@@ -141,7 +141,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:22:20.857Z"
+      "updatedAt": "2026-06-17T14:38:08.454Z"
     },
     "KyawTheMonkey": {
       "login": "KyawTheMonkey",
@@ -151,7 +151,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:22:51.480Z"
+      "updatedAt": "2026-06-17T14:38:43.087Z"
     },
     "bclews": {
       "login": "bclews",
@@ -161,7 +161,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:23:25.017Z"
+      "updatedAt": "2026-06-17T14:39:11.899Z"
     },
     "joevandeventer": {
       "login": "joevandeventer",
@@ -171,23 +171,17 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:23:37.086Z"
+      "updatedAt": "2026-06-17T14:39:32.160Z"
     },
     "danterobles": {
       "login": "danterobles",
-      "mastodon": {
-        "handle": "@dgroblesv76@www.tiktok.com",
-        "url": "https://www.tiktok.com/@dgroblesv76",
-        "source": "linktree",
-        "verified": true
-      },
       "twitter": {
         "handle": "@danteroblesv",
         "url": "https://x.com/danteroblesv",
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:23:38.627Z"
+      "updatedAt": "2026-06-17T14:39:50.937Z"
     },
     "rcarver": {
       "login": "rcarver",
@@ -197,7 +191,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-06-16T07:23:39.888Z"
+      "updatedAt": "2026-06-17T14:39:52.259Z"
     }
   }
 }
