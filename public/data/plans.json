@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-19T22:47:08.994Z",
+  "generated": "2026-06-19T23:22:29.601Z",
   "open": [
     {
       "date": "2026-02-26",
@@ -92,6 +92,12 @@
       "slug": "section-integration-phase2c",
       "title": "Section Integration with List (List SwiftUI API Parity Phase 2c)",
       "preface": "Phase 2c integrates Section headers/footers into List's row rendering while maintaining SwiftUI API parity. The key insight: Section headers/footers are non-selectable visual separators, while content items within sections are individually selectable and focusable. Current architecture treats entire Sections as single rows; this plan flattens Section structure into individual row types with focus navigation that skips non-selectable headers/footers. Alternating row colors now restart per section."
+    },
+    {
+      "date": "2026-02-07",
+      "slug": "astro-dashboard",
+      "title": "Astro Migration: Dashboard",
+      "preface": "This plan migrates the TUIKit Dashboard from Next.js 16 to Astro, building on the landing page migration. The dashboard is more interactive than the landing page: StatCards, ActivityHeatmap, CommitList, PlansCard, and AvatarMarquee all require client-side JavaScript. These become React Islands with appropriate hydration strategies. Data fetching via `useGitHubStats` and localStorage caching remain client-side. The result is a dashboard that loads faster while maintaining all interactivity including Framer Motion animations."
     },
     {
       "date": "2026-02-07",
