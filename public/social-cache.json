@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T18:42:45.648Z",
+  "generatedAt": "2026-06-30T20:42:58.289Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -198,6 +198,16 @@
         "verified": true
       },
       "updatedAt": "2026-06-30T18:42:23.175Z"
+    },
+    "gtirloni": {
+      "login": "gtirloni",
+      "bluesky": {
+        "handle": "@gtirloni.bsky.social",
+        "url": "https://bsky.app/profile/gtirloni.bsky.social",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-06-30T20:38:48.053Z"
     }
   }
 }
