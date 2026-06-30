@@ -1,11 +1,17 @@
 {
-  "generated": "2026-06-30T17:35:22.047Z",
+  "generated": "2026-06-30T18:35:26.759Z",
   "open": [
     {
       "date": "2026-02-26",
       "slug": "mouse-support",
       "title": "Mouse Support",
       "preface": "TUIkit gains incremental mouse support for terminal apps, layered on top of the existing key-only input pipeline. Rollout is staged across three user-visible features: wheel scroll for `List`/`Table` (v1), click-to-focus and click-to-select for rows (v2), and generalized click dispatch for all focusable controls (v3). Keyboard behavior stays unchanged, render-loop performance is preserved, and mouse modes are guaranteed to be disabled on shutdown so no escape sequences leak into the parent shell."
+    },
+    {
+      "date": "2026-02-14",
+      "slug": "project-analysis-improvements",
+      "title": "Project Analysis Improvements",
+      "preface": "Tracks all recommendations from `papers/project_analysis.md` (2026-02-14). The analysis reviewed 135 Swift source files (28,126 lines) and identified 29 improvements across four priority levels (P1 quick wins, P2 high-impact/medium-effort, P3 medium-impact/higher-effort, P4 long-term architectural) plus nine additional findings (code style, test coverage). Twenty-four of twenty-nine items are complete; this plan focuses the remaining five items on the test-coverage gap in image processing, notifications, view extensions, and the `App/` subsystem, plus the organizational question around `project-template/`."
     },
     {
       "date": "2026-02-02",
