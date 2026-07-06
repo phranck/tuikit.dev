@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T13:51:30.820Z",
+  "generatedAt": "2026-07-06T15:10:25.806Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -208,6 +208,16 @@
         "verified": true
       },
       "updatedAt": "2026-07-05T20:36:52.715Z"
+    },
+    "atpugvaraa": {
+      "login": "atpugvaraa",
+      "twitter": {
+        "handle": "@atpugvaraa",
+        "url": "https://x.com/atpugvaraa",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-07-06T15:10:25.805Z"
     }
   }
 }
