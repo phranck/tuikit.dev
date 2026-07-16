@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T11:37:56.653Z",
+  "generatedAt": "2026-07-16T12:39:08.527Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -9,7 +9,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:22:05.491Z"
+      "updatedAt": "2026-07-16T12:32:02.709Z"
     },
     "mlaves": {
       "login": "mlaves",
@@ -19,7 +19,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:22:39.728Z"
+      "updatedAt": "2026-07-16T12:32:39.561Z"
     },
     "JohJakob": {
       "login": "JohJakob",
@@ -29,7 +29,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:22:55.670Z"
+      "updatedAt": "2026-07-16T12:32:52.493Z"
     },
     "NikitaKurpas": {
       "login": "NikitaKurpas",
@@ -39,7 +39,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:23:07.046Z"
+      "updatedAt": "2026-07-16T12:33:04.193Z"
     },
     "lucaArchidiacono": {
       "login": "lucaArchidiacono",
@@ -49,7 +49,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:23:20.566Z"
+      "updatedAt": "2026-07-16T12:33:17.538Z"
     },
     "rawillk": {
       "login": "rawillk",
@@ -59,7 +59,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:23:38.160Z"
+      "updatedAt": "2026-07-16T12:33:36.188Z"
     },
     "toastersocks": {
       "login": "toastersocks",
@@ -69,7 +69,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:23:39.813Z"
+      "updatedAt": "2026-07-16T12:33:37.188Z"
     },
     "emlynmu": {
       "login": "emlynmu",
@@ -79,17 +79,23 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:23:53.501Z"
+      "updatedAt": "2026-07-16T12:33:50.273Z"
     },
     "MatiMax": {
       "login": "MatiMax",
+      "mastodon": {
+        "handle": "@matimax@mastodon.social",
+        "url": "https://mastodon.social/@matimax",
+        "source": "username-match",
+        "verified": true
+      },
       "twitter": {
         "handle": "@IamMatiMax",
         "url": "https://x.com/IamMatiMax",
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:24:04.679Z"
+      "updatedAt": "2026-07-16T12:33:52.128Z"
     },
     "gtirloni": {
       "login": "gtirloni",
@@ -99,7 +105,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:24:06.126Z"
+      "updatedAt": "2026-07-16T12:33:53.867Z"
     },
     "ferrousguy": {
       "login": "ferrousguy",
@@ -121,7 +127,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:24:17.657Z"
+      "updatedAt": "2026-07-16T12:34:06.702Z"
     },
     "samdze": {
       "login": "samdze",
@@ -131,7 +137,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:24:29.609Z"
+      "updatedAt": "2026-07-16T12:34:19.348Z"
     },
     "castlele": {
       "login": "castlele",
@@ -141,7 +147,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:26:40.178Z"
+      "updatedAt": "2026-07-16T12:36:32.845Z"
     },
     "KyawTheMonkey": {
       "login": "KyawTheMonkey",
@@ -151,7 +157,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:27:06.258Z"
+      "updatedAt": "2026-07-16T12:36:59.383Z"
     },
     "bclews": {
       "login": "bclews",
@@ -161,7 +167,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:27:29.956Z"
+      "updatedAt": "2026-07-16T12:37:25.955Z"
     },
     "joevandeventer": {
       "login": "joevandeventer",
@@ -171,7 +177,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:27:42.736Z"
+      "updatedAt": "2026-07-16T12:37:39.049Z"
     },
     "danterobles": {
       "login": "danterobles",
@@ -187,7 +193,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:27:44.141Z"
+      "updatedAt": "2026-07-16T12:37:40.009Z"
     },
     "rcarver": {
       "login": "rcarver",
@@ -197,7 +203,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:27:45.142Z"
+      "updatedAt": "2026-07-16T12:37:40.649Z"
     },
     "ravidsinghbiz": {
       "login": "ravidsinghbiz",
@@ -207,7 +213,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:28:34.888Z"
+      "updatedAt": "2026-07-16T12:38:29.484Z"
     },
     "atpugvaraa": {
       "login": "atpugvaraa",
@@ -217,7 +223,7 @@
         "source": "github",
         "verified": true
       },
-      "updatedAt": "2026-07-15T20:29:09.203Z"
+      "updatedAt": "2026-07-16T12:39:04.080Z"
     }
   }
 }
