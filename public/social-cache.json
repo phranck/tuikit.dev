@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T20:55:12.571Z",
+  "generatedAt": "2026-07-18T21:22:26.067Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -224,6 +224,16 @@
         "verified": true
       },
       "updatedAt": "2026-07-18T20:55:08.013Z"
+    },
+    "quantDIY": {
+      "login": "quantDIY",
+      "twitter": {
+        "handle": "@QuantDIY",
+        "url": "https://x.com/QuantDIY",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-07-18T21:22:26.066Z"
     }
   }
 }
