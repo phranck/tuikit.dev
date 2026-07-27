@@ -7,7 +7,7 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node --env-file=.env.local ./node_modules/astro/astro.js dev",
     "start": "astro dev",
     "prebuild": "tsx scripts/generate-terminal-data.ts && tsx scripts/update-plans-data.ts && tsx scripts/update-version-cache.ts",
     "build": "astro build",

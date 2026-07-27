@@ -28,3 +28,4 @@ WHATS-NEXT.md
 # Generated files
 src/components/react/terminal-data.ts
 project-stats.json
+.env.local
