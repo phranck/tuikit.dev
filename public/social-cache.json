@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T22:54:45.901Z",
+  "generatedAt": "2026-07-31T23:27:49.954Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -234,6 +234,22 @@
         "verified": true
       },
       "updatedAt": "2026-07-31T18:10:09.577Z"
+    },
+    "pnewell": {
+      "login": "pnewell",
+      "mastodon": {
+        "handle": "@pnewell4@producthunt.com",
+        "url": "https://producthunt.com/@pnewell4",
+        "source": "aboutme",
+        "verified": true
+      },
+      "twitter": {
+        "handle": "@pnewell4",
+        "url": "https://x.com/pnewell4",
+        "source": "aboutme",
+        "verified": true
+      },
+      "updatedAt": "2026-07-31T23:27:49.953Z"
     }
   }
 }
