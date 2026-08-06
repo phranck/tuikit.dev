@@ -57,6 +57,14 @@ jobs:
       - name: Add CNAME
         run: echo "tuikit.dev" > dist/CNAME
 
+      - name: Add security.txt
+        uses: phranck/security-txt-action@v1
+        with:
+          host: tuikit.dev
+          output: dist/.well-known
+          signing-key: ${{ secrets.SECURITY_TXT_SIGNING_KEY }}
+          signing-passphrase: ${{ secrets.SECURITY_TXT_SIGNING_PASSPHRASE }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
