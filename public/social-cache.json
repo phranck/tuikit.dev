@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T08:38:52.865Z",
+  "generatedAt": "2026-08-10T09:37:59.101Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -260,6 +260,28 @@
         "verified": true
       },
       "updatedAt": "2026-08-09T20:53:22.285Z"
+    },
+    "n0an": {
+      "login": "n0an",
+      "mastodon": {
+        "handle": "@anton_novoselov@mastodon.social",
+        "url": "https://mastodon.social/@anton_novoselov",
+        "source": "github",
+        "verified": true
+      },
+      "twitter": {
+        "handle": "@_antonnovoselov",
+        "url": "https://x.com/_antonnovoselov",
+        "source": "github",
+        "verified": true
+      },
+      "bluesky": {
+        "handle": "@anton-novoselov.bsky.social",
+        "url": "https://bsky.app/profile/anton-novoselov.bsky.social",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-08-10T09:37:59.101Z"
     }
   }
 }
