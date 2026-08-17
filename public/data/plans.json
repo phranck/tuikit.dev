@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17T10:42:24.927Z",
+  "generated": "2026-08-17T11:06:20.347Z",
   "open": [
     {
       "date": "2026-02-26",
@@ -12,6 +12,12 @@
       "slug": "project-analysis-improvements",
       "title": "Project Analysis Improvements",
       "preface": "Tracks all recommendations from `papers/project_analysis.md` (2026-02-14). The analysis reviewed 135 Swift source files (28,126 lines) and identified 29 improvements across four priority levels (P1 quick wins, P2 high-impact/medium-effort, P3 medium-impact/higher-effort, P4 long-term architectural) plus nine additional findings (code style, test coverage). Twenty-four of twenty-nine items are complete; this plan focuses the remaining five items on the test-coverage gap in image processing, notifications, view extensions, and the `App/` subsystem, plus the organizational question around `project-template/`."
+    },
+    {
+      "date": "2026-02-02",
+      "slug": "state-persistence",
+      "title": "State Persistence (Session Continuity / Crash Recovery)",
+      "preface": "Session state now survives app crashes with `@RestoredState`. Ua disk-persisted wrapper around `@State`. Values auto-save on change (debounced) and auto-restore on startup. Signal handlers (SIGTERM/SIGINT) flush state before shutdown so no data is lost. Perfect for file managers, editors, or any app tracking last directory, scroll position, or open files. Builds on the State Storage Identity system to keep state stable across renders while adding optional persistence."
     }
   ],
   "done": [
