@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T08:51:00.418Z",
+  "generatedAt": "2026-08-21T09:19:21.441Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -282,6 +282,16 @@
         "verified": true
       },
       "updatedAt": "2026-08-21T06:18:03.685Z"
+    },
+    "craigwrong": {
+      "login": "craigwrong",
+      "twitter": {
+        "handle": "@SwiftBitcoinOrg",
+        "url": "https://x.com/SwiftBitcoinOrg",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-08-21T09:19:21.441Z"
     }
   }
 }
