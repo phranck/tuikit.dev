@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T13:28:06.681Z",
+  "generatedAt": "2026-08-24T13:54:07.204Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -292,6 +292,16 @@
         "verified": true
       },
       "updatedAt": "2026-08-24T05:52:41.499Z"
+    },
+    "melgu": {
+      "login": "melgu",
+      "mastodon": {
+        "handle": "@melgu@norden.social",
+        "url": "https://norden.social/@melgu",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-08-24T13:54:07.204Z"
     }
   }
 }
