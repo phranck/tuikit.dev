@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T08:42:08.939Z",
+  "generated": "2026-08-31T09:09:44.500Z",
   "open": [
     {
       "date": "2026-02-26",
@@ -206,6 +206,12 @@
       "slug": "dashboard-avatar-marquee",
       "title": "Plan: Dashboard Redesign - Avatar Marquee",
       "preface": "A generic `AvatarMarquee` component now displays scrolling avatar lists (stargazers, contributors, etc.) with smooth infinite scroll, fade edges, and hover popovers. The marquee arrow targets the relevant stat card above (Stars, Contributors, etc.). Hover decelerates scroll smoothly; mouseleave accelerates it back. Generic TypeScript props make it reusable for any avatar collection. The Stargazers panel now uses this component, replacing a static grid."
+    },
+    {
+      "date": "2026-02-04",
+      "slug": "project-dashboard",
+      "title": "Project Dashboard: Live GitHub Metrics Page",
+      "preface": "A `/dashboard` page now displays live GitHub metrics: stat cards (commits, stars, forks, PRs, contributors, branches, tags, releases), a 52-week commit heatmap (GitHub-style), language breakdown bar, recent commits with expandable messages, and repo metadata. All data fetched client-side via GitHub REST API (no token required). Manual refresh button + rate limit display in footer. Phosphor-themed retro styling matches the landing page. Everything loads in parallel for snappy performance."
     },
     {
       "date": "2026-02-04",
