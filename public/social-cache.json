@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T15:42:06.637Z",
+  "generatedAt": "2026-09-03T16:17:18.122Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -302,6 +302,22 @@
         "verified": true
       },
       "updatedAt": "2026-09-03T15:18:49.536Z"
+    },
+    "bscothern": {
+      "login": "bscothern",
+      "twitter": {
+        "handle": "@BradenScothern",
+        "url": "https://x.com/BradenScothern",
+        "source": "github",
+        "verified": true
+      },
+      "bluesky": {
+        "handle": "@bswift.io",
+        "url": "https://bsky.app/profile/bswift.io",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-09-03T16:17:18.122Z"
     }
   }
 }
