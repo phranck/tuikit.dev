@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T08:05:48.042Z",
+  "generatedAt": "2026-10-28T15:00:43.820Z",
   "entries": {
     "sgade": {
       "login": "sgade",
@@ -308,6 +308,16 @@
         "verified": true
       },
       "updatedAt": "2026-10-25T09:04:18.967Z"
+    },
+    "osteslag": {
+      "login": "osteslag",
+      "mastodon": {
+        "handle": "@bondo@mastodon.social",
+        "url": "https://mastodon.social/@bondo",
+        "source": "github",
+        "verified": true
+      },
+      "updatedAt": "2026-10-28T15:00:43.820Z"
     }
   }
 }
